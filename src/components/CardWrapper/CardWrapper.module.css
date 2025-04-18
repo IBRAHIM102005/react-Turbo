@@ -1,0 +1,11 @@
+.container{
+    width: 85%;
+    margin: 5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f3f4f7;
+
+}
+.load{
+    margin-top: 6rem;
+}
