@@ -41,7 +41,7 @@ export function useFetch() {
         async function fetchCall() {
             try {
 
-                const response = await fetch("https://67fa0b2b094de2fe6ea2fc96.mockapi.io/cards");
+                const response = await fetch(`https://67fa0b2b094de2fe6ea2fc96.mockapi.io/cards`);
 
                 const data = await response.json();
                 setUser(data);

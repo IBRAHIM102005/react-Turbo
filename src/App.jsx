@@ -1,15 +1,15 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
-import { Card } from './components/Card/index.jsx'
 import CardWrapper from './components/CardWrapper/index.jsx'
-import { useFetch } from './hook/useFetchData.jsx'
 import { Layout } from './Layout/Layout/Layot.jsx'
 import { Autos } from './pages/Autos/index.jsx'
+import { HomeProvider } from './pages/Home/HomeProvider.jsx'
 import Home from './pages/Home/index.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
+    <HomeProvider>
     <Router>
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -21,6 +21,7 @@ function App() {
 
       </Routes>
     </Router>
+    </HomeProvider>
 
   )
 }

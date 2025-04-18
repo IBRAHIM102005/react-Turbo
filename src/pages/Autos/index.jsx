@@ -7,6 +7,10 @@ import { useFetch } from "../../hook/useFetchData";
 export function Autos() {
     const { data, loading, error } = useFetch();
     const { id } = useParams();
+
+    const chosenCar = data.find((item) => item.id == id);
+
+
     if (loading) {
         return <p className={styles.load}>Loading...</p>
     }
