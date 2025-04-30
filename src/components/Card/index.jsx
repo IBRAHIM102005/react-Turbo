@@ -16,7 +16,7 @@ export function Card({ data, handleNavigate }) {
           }}
         >
           <div className={styles.imageDiv}>
-            <img src={data.avatar} alt='' />
+            <img src={data.avatar} alt='car' />
           </div>
           <div className={styles.carInfo}>
             <h2>{data.price}</h2>

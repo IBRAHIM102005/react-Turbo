@@ -1,17 +1,17 @@
-import { useContext,useState } from 'react';
+import { useContext, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { HomeContext } from '../../pages/Home/context';
 export function Header() {
-  const { modifiedData,data, setNewData } = useContext(HomeContext);
+  const { modifiedData, data, setNewData } = useContext(HomeContext);
   const [state, setState] = useState(false);
 
   console.log({ data });
 
   const handleFilter = (value) => {
-    if(value === 'Hamisi'){
-        setNewData(data);
-        return;
+    if (value === 'Hamisi') {
+      setNewData(data);
+      return;
     }
     if (data) {
       setNewData(data.filter((item) => item.marka === value));
@@ -47,7 +47,9 @@ export function Header() {
           </form>
         </li>
       </ul>
-      <button className='new-ad-button'>Yeni elan</button>
+      <Link to={'/Form'}>
+        <button className='new-ad-button'>Yeni elan</button>
+      </Link>
     </header>
   );
 }
