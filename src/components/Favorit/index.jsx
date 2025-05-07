@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { HomeContext } from '../../pages/Home/context';
 import { Card } from '../Card';
 import { useNavigate } from 'react-router-dom';
-export function Favorit() {
+function Favorit() {
   const state = useSelector((state) => state.counter);
   const { newData } = useContext(HomeContext);
   console.log({ newData });
@@ -44,3 +44,5 @@ export function Favorit() {
     </div>
   );
 }
+
+export default Favorit;

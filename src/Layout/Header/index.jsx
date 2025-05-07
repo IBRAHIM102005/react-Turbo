@@ -41,7 +41,9 @@ export function Header() {
               onChange={(e) => handleFilter(e.target.value)}
             >
               {modifiedData.map((item) => (
-                <option value={item.marka}>{item.marka}</option>
+                <option key={item.id} value={item.marka}>
+                  {item.marka}
+                </option>
               ))}
             </select>
           </form>

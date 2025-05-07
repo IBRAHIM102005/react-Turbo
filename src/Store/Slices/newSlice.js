@@ -18,9 +18,10 @@ export const newSlice = createSlice({
     //   // return state.counterVal
     // },
     pushArray: (state, action) => {
-      state.idArray = state.idArray.includes(action.payload)
-        ? [...state.idArray]
-        : state.idArray.push(action.payload);
+      state.idArray = !state.idArray.includes(action.payload)
+        ? state.idArray.push(action.payload)
+        : [...state.idArray];
+      console.log(current(state.idArray));
       //   state.idArray.push(action.payload);
       //   state.idArray = [...new Set(state.idArray)];
     },
