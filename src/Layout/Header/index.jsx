@@ -6,18 +6,14 @@ export function Header() {
   const { modifiedData, data, setNewData } = useContext(HomeContext);
   const [state, setState] = useState(false);
 
-  console.log({ data });
-
   const handleFilter = (value) => {
-    // console.log(value);
-
     if (value === 'Hamisi') {
       setNewData(data);
-      return data;
+      return;
     }
-    if (data) {
-      setNewData(data.filter((item) => item.marka === value));
-    }
+    console.log({ data }, { value });
+
+    setNewData(data.filter((item) => item.marka === value));
   };
   return (
     <header className='header'>

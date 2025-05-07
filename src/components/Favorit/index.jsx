@@ -7,15 +7,21 @@ import { useNavigate } from 'react-router-dom';
 export function Favorit() {
   const state = useSelector((state) => state.counter);
   const { newData } = useContext(HomeContext);
-  const arr = [...new Set(state.idArray)];
-  const selectItem = arr.map((id) => newData?.find((item) => item.id === id));
-  console.log(state);
+  console.log({ newData });
+  // const arr = [...new Set(state.idArray)];
+
+  const selectItem = newData.filter((item) =>
+    state.idArray.find((id) => id === item.id),
+  );
+
+  // const selectedItems = newData.filter(item=>item.id === )
 
   const navigate = useNavigate();
   const handleNavigate = (id) => {
     navigate(`/autos/${id}`);
   };
-  if (arr.length == 0) {
+
+  if (selectItem.length == 0) {
     return (
       <div className='containerFav'>
         <span>Secilmis Avtomobil yoxdur!!!</span>
@@ -34,7 +40,7 @@ export function Favorit() {
           buttonName='pushArray'
         />
       ))}
-      <p>Count:{state.counterVal}</p>
+      <p>Count:{state.idArray.length}</p>
     </div>
   );
 }

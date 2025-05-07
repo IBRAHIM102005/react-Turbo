@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useRef } from 'react';
 
 export function Card({ data, handleNavigate, cardId, buttonName }) {
-  const { id } = useParams();
   const buttonRef = useRef();
 
   if (!data) return <p>Data yoxdur</p>;
@@ -54,7 +53,7 @@ export function Card({ data, handleNavigate, cardId, buttonName }) {
               {data.year}, {data.engine}, {data.mileage}
             </p>
             <p className='location'>Bakı, bu gün 13:28</p>
-            <p>{id}</p>
+            <p>{cardId}</p>
           </div>
         </div>
       </div>

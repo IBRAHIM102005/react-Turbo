@@ -5,11 +5,8 @@ import { HomeContext } from './context';
 export const HomeProvider = ({ children }) => {
   const { data } = useFetch();
 
-  // console.log(data);
-
   const [newData, setNewData] = useState(data);
 
-  // console.log({ data });
   const modifiedData = [
     {
       marka: 'Hamisi',
