@@ -9,9 +9,11 @@ export function Header() {
   console.log({ data });
 
   const handleFilter = (value) => {
+    // console.log(value);
+
     if (value === 'Hamisi') {
       setNewData(data);
-      return;
+      return data;
     }
     if (data) {
       setNewData(data.filter((item) => item.marka === value));
@@ -31,7 +33,9 @@ export function Header() {
         <li>Avtokatalog</li>
         <li>Moto</li>
         <li>Ehtiyat hissələr və aksesuarlar</li>
-        <li>İcarə</li>
+        <li>
+          <Link to={'/fav'}>Secilmisler</Link>
+        </li>
         <li>
           <form action=''>
             <select

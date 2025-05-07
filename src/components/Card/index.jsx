@@ -1,10 +1,13 @@
+import { Button } from '../../Store/FavButton';
 import styles from '../Card/Card.module.css';
 import { useParams } from 'react-router-dom';
+import { useRef } from 'react';
 
-export function Card({ data, handleNavigate }) {
+export function Card({ data, handleNavigate, cardId, buttonName }) {
   const { id } = useParams();
+  const buttonRef = useRef();
 
-  if (!data) return <p>Data yxodur</p>;
+  if (!data) return <p>Data yoxdur</p>;
 
   return (
     <>
@@ -15,6 +18,30 @@ export function Card({ data, handleNavigate }) {
             handleNavigate(data.id);
           }}
         >
+          <div
+            className={styles.favIcon}
+            onClick={(e) => {
+              // if (
+              //   buttonRef.current.innerHTML ==
+              //   '<i class="bi bi-balloon-heart"></i>'
+              // ) {
+              //   buttonRef.current.innerHTML =
+              //     '<i class="bi bi-balloon-heart-fill"></i>';
+              //   buttonRef.current.style.color = 'red';
+              // } else {
+              //   buttonRef.current.innerHTML =
+              //     '<i class="bi bi-balloon-heart"></i>';
+              //   buttonRef.current.style.color = 'black';
+              // }
+              e.stopPropagation();
+            }}
+          >
+            <Button
+              buttonName={buttonName}
+              buttonRef={buttonRef}
+              buttonId={cardId}
+            />
+          </div>
           <div className={styles.imageDiv}>
             <img src={data.avatar} alt='car' />
           </div>

@@ -10,9 +10,9 @@ import { useCallback } from 'react';
 export function MainForm() {
   const validationSchema = yup.object().shape({
     name: yup.string().required('Name is required'),
-    Marka: yup.string().required('Car name is required'),
-    Model: yup.string().required('Car model is required'),
-    Yanacaq: yup.string().required('Yanacaq is required'),
+    marka: yup.string().required('Car name is required'),
+    model: yup.string().required('Car model is required'),
+    yanacaq: yup.string().required('Yanacaq is required'),
     type: yup.string().required('Type is required'),
     gearBox: yup.string().required('GearBox type is required'),
   });
@@ -53,8 +53,8 @@ export function MainForm() {
     },
     resolver: useYupValidationResolver(validationSchema),
   });
-  const marka = [...new Set(modifiedData.map((car) => car.marka))];
-  const model = [...new Set(modifiedData.map((car) => car.model))];
+  const Marka = [...new Set(modifiedData.map((car) => car.marka))];
+  const Model = [...new Set(modifiedData.map((car) => car.model))];
   const fuel = [
     '',
     'Benzin',
@@ -111,7 +111,7 @@ export function MainForm() {
   ];
 
   const onSubmit = (data1) => {
-    console.log('Form Data:', data1);
+    // console.log('Form Data:', data1);
   };
 
   return (
@@ -126,20 +126,20 @@ export function MainForm() {
         />
         <Select
           control={methods.control}
-          options={marka}
+          options={Marka}
           labelName='Marka: '
-          name='Marka'
+          name='marka'
         />
         <Select
           control={methods.control}
           labelName='Model: '
-          name='Model'
-          options={model}
+          name='model'
+          options={Model}
         />
         <Select
           control={methods.control}
           labelName='Yanacaq Novu:  '
-          name='Yanacaq'
+          name='yanacaq'
           options={fuel}
         />
         <Select

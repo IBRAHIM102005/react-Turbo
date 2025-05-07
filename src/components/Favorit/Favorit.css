@@ -1,0 +1,16 @@
+.div3{
+    margin-top: 6rem;
+}
+.containerFav{
+    width: 85%;
+    min-height: 100px;
+    margin: 5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f3f4f7;
+}
+.containerFav span{
+    margin: 50px auto;
+    font-size: 3rem;
+
+}

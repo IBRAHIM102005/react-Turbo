@@ -16,6 +16,7 @@
     position: fixed;
     top: 0;
     height: 5rem;
+    z-index: 3;
 }
 
 .logo a{

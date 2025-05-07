@@ -14,17 +14,22 @@ function CardWrapper() {
     navigate(`/autos/${id}`);
   };
 
-  console.log({ newData });
-  if (loading) {
-    return <p className={styles.load}>Loading...</p>;
-  }
+  console.log('erwer', { newData });
+  // if (loading) {
+  //   return <p className={styles.load}>Loading...</p>;
+  // }
   if (newData) {
     return (
       <>
         <div className={styles.container}>
-          {' '}
           {newData.map((item) => (
-            <Card key={item.id} data={item} handleNavigate={handleNavigate} />
+            <Card
+              key={item.id}
+              data={item}
+              handleNavigate={handleNavigate}
+              cardId={item.id}
+              buttonName='pushArray'
+            />
           ))}
         </div>
       </>

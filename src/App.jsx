@@ -6,6 +6,7 @@ import { Autos } from './pages/Autos/index.jsx';
 import { HomeProvider } from './pages/Home/HomeProvider.jsx';
 import Home from './pages/Home/index.jsx';
 import { MainForm } from './components/NewForm/MainForm/index.jsx';
+import { Favorit } from './components/Favorit/index.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/autos/:id' element={<Autos />} />
             <Route path='/autos' element={<CardWrapper />} />
             <Route path='/Form' element={<MainForm />} />
+            <Route path='/fav' element={<Favorit />} />
           </Route>
           <Route
             path='/*'

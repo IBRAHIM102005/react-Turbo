@@ -4,9 +4,12 @@ import { HomeContext } from './context';
 
 export const HomeProvider = ({ children }) => {
   const { data } = useFetch();
+
+  // console.log(data);
+
   const [newData, setNewData] = useState(data);
 
-  console.log({ data });
+  // console.log({ data });
   const modifiedData = [
     {
       marka: 'Hamisi',
@@ -23,8 +26,11 @@ export const HomeProvider = ({ children }) => {
   ];
 
   useEffect(() => {
-    if (data) setNewData(data);
-  }, []);
+    if (data.length != 0) {
+      setNewData(data);
+      console.log('fchf', data);
+    }
+  }, [data]);
   return (
     <HomeContext.Provider value={{ data, newData, modifiedData, setNewData }}>
       {children}
